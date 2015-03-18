@@ -1,0 +1,10 @@
+.CodeMirror.cm-s-default {
+	font-size: 20px!important;
+	line-height: 22px!important;
+}
+.gdi-handson button {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: white;
+	font-weight: bold;
+}

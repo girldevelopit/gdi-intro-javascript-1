@@ -1,0 +1,323 @@
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace!important;
+  height: 300px!important;
+  color: black!important;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0!important; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px!important; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white!important; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd!important;
+  background-color: #f7f7f7!important;
+  white-space: nowrap!important;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px!important;
+  min-width: 20px!important;
+  text-align: right!important;
+  color: #999!important;
+  white-space: nowrap!important;
+}
+
+.CodeMirror-guttermarker { color: black!important; }
+.CodeMirror-guttermarker-subtle { color: #999!important; }
+
+/* CURSOR */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black!important;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver!important;
+}
+.CodeMirror.cm-fat-cursor div.CodeMirror-cursor {
+  width: auto!important;
+  border: 0!important;
+  background: #7e7!important;
+}
+.CodeMirror.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1!important;
+}
+
+.cm-animate-fat-cursor {
+  width: auto!important;
+  border: 0!important;
+  -webkit-animation: blink 1.06s steps(1) infinite!important;
+  -moz-animation: blink 1.06s steps(1) infinite!important;
+  animation: blink 1.06s steps(1) infinite!important;
+}
+@-moz-keyframes blink {
+  0% { background: #7e7!important; }
+  50% { background: none!important; }
+  100% { background: #7e7!important; }
+}
+@-webkit-keyframes blink {
+  0% { background: #7e7!important; }
+  50% { background: none!important; }
+  100% { background: #7e7!important; }
+}
+@keyframes blink {
+  0% { background: #7e7!important; }
+  50% { background: none!important; }
+  100% { background: #7e7!important; }
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+div.CodeMirror-overwrite div.CodeMirror-cursor {}
+
+.cm-tab { display: inline-block!important; text-decoration: inherit!important; }
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc!important;
+  position: absolute!important;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-keyword {color: #708!important;}
+.cm-s-default .cm-atom {color: #219!important;}
+.cm-s-default .cm-number {color: #164!important;}
+.cm-s-default .cm-def {color: #00f!important;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a!important;}
+.cm-s-default .cm-variable-3 {color: #085!important;}
+.cm-s-default .cm-comment {color: #a50!important;}
+.cm-s-default .cm-string {color: #a11!important;}
+.cm-s-default .cm-string-2 {color: #f50!important;}
+.cm-s-default .cm-meta {color: #555!important;}
+.cm-s-default .cm-qualifier {color: #555!important;}
+.cm-s-default .cm-builtin {color: #30a!important;}
+.cm-s-default .cm-bracket {color: #997!important;}
+.cm-s-default .cm-tag {color: #170!important;}
+.cm-s-default .cm-attribute {color: #00c!important;}
+.cm-s-default .cm-header {color: blue!important;}
+.cm-s-default .cm-quote {color: #090!important;}
+.cm-s-default .cm-hr {color: #999!important;}
+.cm-s-default .cm-link {color: #00c!important;}
+
+.cm-negative {color: #d44!important;}
+.cm-positive {color: #292!important;}
+.cm-header, .cm-strong {font-weight: bold!important;}
+.cm-em {font-style: italic!important;}
+.cm-link {text-decoration: underline!important;}
+.cm-strikethrough {text-decoration: line-through!important;}
+
+.cm-s-default .cm-error {color: #f00!important;}
+.cm-invalidchar {color: #f00!important;}
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0!important;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22!important;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3)!important; }
+.CodeMirror-activeline-background {background: #e8f2ff!important;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative!important;
+  overflow: hidden!important;
+  background: white!important;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important!important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px!important; margin-right: -30px!important;
+  padding-bottom: 30px!important;
+  height: 100%!important;
+  outline: none!important; /* Prevent dragging from highlighting the element */
+  position: relative!important;
+}
+.CodeMirror-sizer {
+  position: relative!important;
+  border-right: 30px solid transparent!important;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute!important;
+  z-index: 6!important;
+  display: none!important;
+}
+.CodeMirror-vscrollbar {
+  right: 0!important; top: 0!important;
+  overflow-x: hidden!important;
+  overflow-y: scroll!important;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0!important; left: 0!important;
+  overflow-y: hidden!important;
+  overflow-x: scroll!important;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0!important; bottom: 0!important;
+}
+.CodeMirror-gutter-filler {
+  left: 0!important; bottom: 0!important;
+}
+
+.CodeMirror-gutters {
+  position: absolute!important; left: 0!important; top: 0!important;
+  z-index: 3!important;
+}
+.CodeMirror-gutter {
+  white-space: normal!important;
+  height: 100%!important;
+  display: inline-block!important;
+  margin-bottom: -30px!important;
+  /* Hack to make IE7 behave */
+  *zoom:1!important;
+  *display:inline!important;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute!important;
+  z-index: 4!important;
+  height: 100%!important;
+}
+.CodeMirror-gutter-elt {
+  position: absolute!important;
+  cursor: default!important;
+  z-index: 4!important;
+}
+.CodeMirror-gutter-wrapper {
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  user-select: none!important;
+}
+
+.CodeMirror-lines {
+  cursor: text!important;
+  min-height: 1px!important; /* prevents collapsing before first draw */
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0!important; -webkit-border-radius: 0!important; border-radius: 0!important;
+  border-width: 0!important;
+  background: transparent!important;
+  font-family: inherit!important;
+  font-size: inherit!important;
+  margin: 0!important;
+  white-space: pre!important;
+  word-wrap: normal!important;
+  line-height: inherit!important;
+  color: inherit!important;
+  z-index: 2!important;
+  position: relative!important;
+  overflow: visible!important;
+  -webkit-tap-highlight-color: transparent!important;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word!important;
+  white-space: pre-wrap!important;
+  word-break: normal!important;
+}
+
+.CodeMirror-linebackground {
+  position: absolute!important;
+  left: 0!important; right: 0!important; top: 0!important; bottom: 0!important;
+  z-index: 0!important;
+}
+
+.CodeMirror-linewidget {
+  position: relative!important;
+  z-index: 2!important;
+  overflow: auto!important;
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-code {
+  outline: none!important;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box!important;
+  box-sizing: content-box!important;
+}
+
+.CodeMirror-measure {
+  position: absolute!important;
+  width: 100%!important;
+  height: 0!important;
+  overflow: hidden!important;
+  visibility: hidden!important;
+}
+.CodeMirror-measure pre { position: static!important; }
+
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute!important;
+  border-right: none!important;
+  width: 0!important;
+}
+
+div.CodeMirror-cursors {
+  visibility: hidden!important;
+  position: relative!important;
+  z-index: 3!important;
+}
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible!important;
+}
+
+.CodeMirror-selected { background: #d9d9d9!important; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0!important; }
+.CodeMirror-crosshair { cursor: crosshair!important; }
+.CodeMirror ::selection { background: #d7d4f0!important; }
+.CodeMirror ::-moz-selection { background: #d7d4f0!important; }
+
+.cm-searching {
+  background: #ffa!important;
+  background: rgba(255, 255, 0, .4)!important;
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span { *vertical-align: text-bottom!important; }
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px!important; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden!important;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''!important; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none!important; }

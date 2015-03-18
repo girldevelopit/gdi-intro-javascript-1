@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
 		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="lib/codemirror/codemirror.css">
+		<link rel="stylesheet" href="lib/handson/handson.css">
 
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
@@ -164,6 +166,9 @@ document.write('Hello World!');
                     <li>Open index.html. Add a comment to the code.</li>
                     <li>Try different ways of printing your message.</li>
                     <li>Create a new file called mycode.js. Move your code to this file and link it to your page.</li>
+					<div id="testexo" class="gdi-handson" data-initial="function a () {&#10;&#10;}&#10;&#10;function b () {&#10;&#10;}" data-check="a(1,2)===3&&b(2,4)===8" data-hint="use + for addition and * for multiplication">
+						<button>hands on</button>
+					</div>
                 </ul>
             </section>
        
@@ -436,6 +441,9 @@ document.write('Hello World!');
     </div><!-- Close .reveal -->
 
 
+		<script src="lib/codemirror/codemirror.min.js"></script>
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/handson/handson.js"></script>
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.min.js"></script>
 
