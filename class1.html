@@ -124,7 +124,7 @@
             </section>
             <section>
                 <h3>Separating Instructions</h3>
-                <p>After each individual statement, you must add a semicolon.</p>
+                <p>Javascript code is a set of instructions, or statements. After each individual statement, you must add a semicolon.</p>
                 <pre><code>
 &lt;script&gt;
     console.log('Hello World!');
@@ -166,9 +166,9 @@ document.write('Hello World!');
                     <li>Open index.html. Add a comment to the code.</li>
                     <li>Try different ways of printing your message.</li>
                     <li>Create a new file called mycode.js. Move your code to this file and link it to your page.</li>
-					<div id="testexo" class="gdi-handson" data-initial="function a () {&#10;&#10;}&#10;&#10;function b () {&#10;&#10;}" data-check="a(1,2)===3&&b(2,4)===8" data-hint="use + for addition and * for multiplication">
+					<!--div id="testexo" class="gdi-handson" data-initial="function a () {&#10;&#10;}&#10;&#10;function b () {&#10;&#10;}" data-check="a(1,2)===3&&b(2,4)===8" data-hint="use + for addition and * for multiplication">
 						<button>hands on</button>
-					</div>
+					</div-->
                 </ul>
             </section>
        
@@ -179,7 +179,7 @@ document.write('Hello World!');
             <section>
 				<h3>Variable Values</h3>
                 <ul>
-                    <li>When you first create a variable, it does not have a value (it is null).</li>
+                    <li>When you first create a variable, it does not have a value (it is undefined).</li>
                     <li>You can set a value for a variable.</li>
                     <li>Variables can hold different types of information, like words, numbers, and collections of data.</li>
                     <li>The value of a variable can change over time.</li>
@@ -221,7 +221,10 @@ document.write('Hello World!');
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>In your JS file, create a variable and give it a valid name and a value. Then, display the value.</p> 
+                <p>Create a variable called myVar and set it to the number 5. Then, log the value.</p>
+				<div id="simplevarexo" class="gdi-handson" data-initial="" data-check="myVar===5" data-hint="variable assignment uses the = instruction">
+						<button>hands on</button>
+					</div>
 			</section>
        
             
@@ -294,7 +297,10 @@ document.write('Hello World!');
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create two variables and try some arithmetic operators. Don't forget to display your results!</p> 
+                <p>Create two variables named var1 and var2, assigned to 3 and 7 respectively, and try some arithmetic operators: create a var sum12 that holds var1 + var2 and a var product12 that holds var1 * var2.</p> 
+				<div id="addmultexo" class="gdi-handson" data-initial="var var1 = 3;&#10;var var2 = 7;" data-check="sum12===10&&product12===21" data-hint="use + for addition and * for multiplication">
+					<button>hands on</button>
+				</div>
 			</section>
       
             <section>
@@ -338,7 +344,10 @@ document.write('Hello World!');
 
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create two variables, a first name and a last name, and then put them together to make a full name. Don't forget to display your results!</p> 
+                <p>Starting with two variables, a first name firstName and a last name lastName, and then put them together to make a full name fullName.</p>
+				<div id="stringconcatexo" class="gdi-handson" data-initial="var firstName = 'Lea';&#10;var lastName = 'Smith';" data-check="fullName==='Lea Smith'" data-hint="don't forget to separate them with a space">
+					<button>hands on</button>
+				</div>
 			</section>
 
             <section>
@@ -402,6 +411,9 @@ document.write('Hello World!');
             <section>
 				<h3>Let's Develop It</h3>
                 <p>Turn the code you wrote to output someone's full name into a function, then use it.</p> 
+				<div id="simplefuncexo" class="gdi-handson" data-initial="var firstName = 'Lea';&#10;var lastName = 'Smith';&#10;var fullName;&#10;function makeFullName (first, last) {&#10;// your full name creation code goes here&#10;}&#10;makeFullName(firstName, lastName);" data-check="fullName==='Lea Smith'" data-hint="assign the fullName variable from inside the function">
+					<button>hands on</button>
+				</div>
 			</section>
             <section>
                 <h3>Returning Values</h3>
@@ -419,7 +431,10 @@ document.write('Hello World!');
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Add a return statement to your name function. Use that function to set the value of a variable.</p> 
+                <p>Use a return statement in your makeFullName function instead of assigning directly in the function. Then use that function to set the value of the fullName variable.</p> 
+				<div id="returnexo" class="gdi-handson" data-initial="var firstName = 'Lea';&#10;var lastName = 'Smith';&#10;var fullName;&#10;function makeFullName (first, last) {&#10;// your full name creation code goes here&#10;}" data-check="fullName==='Lea Smith'" data-hint="assign the fullName variable from inside the function">
+					<button>hands on</button>
+				</div>
 			</section>
 			
 			<section>
