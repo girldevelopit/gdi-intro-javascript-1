@@ -30,7 +30,22 @@
 			<button>hands on</button>
 		</div-->
 		<h1>Class 2:</h1>
-		<p>Coming soon</p>
+		<h2>1. Recap</h2>
+		<p>Write a function isEven that takes an array of numbers as an argument and returns an array of booleans indicating whether the corresponding number in the argument array is even.</p> 
+			<div id="boollistexo" class="gdi-handson" data-initial="function isEven (numArray) {&#10;&#10;}" data-check="isEven([1,2,3,4.1,12,0]).toString() === [false,true,false,false,true,true].toString()" data-hint="you can make an empty array to hold your result and add to it as you iterate over the argument array">
+			<button>hands on</button>
+		</div>
+		<h2>2. Reflexion</h2>
+		<p>Without writing/using any number, but only variables and function calls, assign the number 26 to the var26 variable.</p> 
+			<div id="scopeexo" class="gdi-handson" data-initial="var value = 20;&#10;var otherValue = 5;&#10;&#10;function weird (value) {&#10;    otherValue = 3;&#10;    value = value + otherValue;&#10;    return value&#10;}&#10;var var26;" data-check="var26===26" data-hint="feel free to rename vars in the function if they don't have a global scope to make things clearer">
+			<button>hands on</button>
+		</div>
+		<h2>3. Challenge</h2>
+		<p>Write a function smallestDiff that takes an array of numbers as an argument and returns the smallest (positive) difference between any two elements of the array. For instance in the array [1, 2, 3.5, 1.2, 7] the smallest difference is 0.2 (between 1 and 1.2).</p> 
+		<div id="superminlistexo" class="gdi-handson" data-initial="function smallestDiff (numArray) {&#10;&#10;}" data-check="smallestDiff([4, 12, 3.99, 2, 1.8, 1.91])===4-3.99" data-hint="this one is all sorts of hard. You can use a double loop or leverage the sort() function of an array.">
+			<button>hands on</button>
+		</div>
+
 		<script src="lib/codemirror/codemirror.min.js"></script>
 		<script src="lib/jquery.min.js"></script>
 		<script src="lib/handson/handson.js"></script>

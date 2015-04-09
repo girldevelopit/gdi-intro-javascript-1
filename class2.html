@@ -95,8 +95,8 @@ console.log (awesomeGroup + ' is pretty awesome.'); //Won't work
             </section>
 			<section>
 				<h3>Let's Develop It</h3>
-                <p>Without using any number, but only variables and function calls, assign the var26 variable to the number 26.</p> 
-				<div id="scopeexo" class="gdi-handson" data-initial="var value = 20;&#10;var otherValue = 5;&#10;&#10;function weird (value) {&#10;    otherValue = 3;&#10;    value = value + otherValue;&#10;    return value&#10;}&#10;var var26;" data-check="var26===26" data-hint="feel free to rename vars in the function if they don't have a global scope to make things clearer">
+                <p>Identify and fix the scope error in the following code, that builds greeting strings based on a first and last name. Bonus: you can do this only by writing "var" at the right place.</p> 
+				<div id="scopeexo" class="gdi-handson" data-initial="function greet (first, last) {&#10;    name = first + ' ' + last;&#10;    greeting = 'Hello, ' + name;&#10;    return greeting;&#10;}&#10;var name = 'Marie';&#10;var lastName = 'Curie';&#10;var fullGreeting = greet(name, lastName);&#10;//alert(name)" data-check="greet('a','b')==='Hello, a b'&&fullGreeting==='Hello, Marie Curie'&&name==='Marie'" data-hint="the variable assignments in the function are global and would override existing global variables">
 					<button>hands on</button>
 				</div>
 			</section>
@@ -202,7 +202,7 @@ if (age &gt;= 16) {
             </section>
 			<section>
 				<h3>Let's Develop It</h3>
-                <p>Write a function shouldTakeCoat that takes the temperature as an argument and returns whether to put on a coat (if it is below 50 degrees).</p> 
+                <p>Write a function shouldTakeCoat that takes the temperature (a number) as an argument and returns whether to put on a coat (if it is below 50 degrees).</p> 
 				<div id="simpleifexo" class="gdi-handson" data-initial="function shouldTakeCoat (temperature) {&#10;    // your code here&#10;}" data-check="shouldTakeCoat(49)&&!shouldTakeCoat(50)" data-hint="if below 50 then return true else return false">
 					<button>hands on</button>
 				</div>
