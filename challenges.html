@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Class 1 ~ JavaScript for Beginners ~ Exercises and Challenges ~ Girl Develop It</title>
+		<link rel="stylesheet" href="lib/codemirror/codemirror.css">
+		<link rel="stylesheet" href="lib/handson/handson.css">
+	</head>
+	<body>
+		<h1>Class 1:</h1>
+		<h2>1. Recap</h2>
+		<p>Write a function addFive that takes a number as an argument, adds five to it, and returns the result. Write a function multiplyBySeven that returns its argument times seven, and finally, write a function addFiveThenMultiplyBySeven that first adds five to its argument, then multiplies the whole thing by seven, and returns the result. Challenge: use the first two functions in the last one instead of math operators.</p>
+		<div id="recapexo" class="gdi-handson" data-initial="function addFive(number) {&#10;&#10;}&#10;function multiplyBySeven (number) {&#10;&#10;}&#10;function addFiveThenMultiplyBySeven (number) {&#10;&#10;}" data-check="addFive(2)===7&&multiplyBySeven(8)===56&&addFiveThenMultiplyBySeven(0)===35" data-hint="it is often easier and more clear to do things in several steps, using variables to store temporary values and results">
+			<button>hands on</button>
+		</div>
+		<h2>2. Reflexion</h2>
+		<p>Write a function concatTwo that takes two arguments and returns a string of those two aruments concatenated as strings. Note that it must support arguments that are either strings or numbers, and always return a string.</p>
+		<div id="concatexo" class="gdi-handson" data-initial="function concatTwo (arg1, arg2) {&#10;&#10;}" data-check="concatTwo(1,2)==='12'&&concatTwo('a','b')==='ab'&&concatTwo('a',2)==='a2'&&concatTwo(1,'b')==='1b'" data-hint="what happens when you add an empty string to a number or a string?">
+			<button>hands on</button>
+		</div>
+		<h2>3. Challenge</h2>
+		<p>Correct the 6 Javascript errors/mistakes in the code below to get a working greetings function that takes a first and last name as arguments (like 'Marie' and 'Curie') and returns a greeting string (like 'Welcome, Marie Curie!!!').</p>
+		<div id="smartexo" class="gdi-handson" data-initial="function greetings (firstName lastName) {&#10;    var result = 'Welcome, ' + firstName + ' ' + lastname + '!!!&#10;    returns result;" data-check="greetings('a','b')==='Welcome, a b!!!'" data-hint="">
+			<button>hands on</button>
+		</div>
+		<!--h2>4. Impossible</h2>
+		<p>Using only concepts from class 1, the substr (or substring) function <a href="http://www.w3schools.com/jsref/jsref_substr.asp">as described here</a>, and the ability for a Javascript function to call itself (recursion), write a function stringReverse that takes a string argument (like 'abc') and returns the reversed string (like 'cba').</p>
+		<div id="reverseexo" class="gdi-handson" data-initial="function stringReverse (myString) {&#10;&#10;}" data-check="stringReverse('qwertyuiop')==='poiuytrewq'" data-hint="">
+			<button>hands on</button>
+		</div-->
+		<h1>Class 2:</h1>
+		<h2>1. Recap</h2>
+		<p>Write a function isEven that takes an array of numbers as an argument and returns an array of booleans indicating whether the corresponding number in the argument array is even.</p> 
+			<div id="boollistexo" class="gdi-handson" data-initial="function isEven (numArray) {&#10;&#10;}" data-check="isEven([1,2,3,4.1,12,0]).toString() === [false,true,false,false,true,true].toString()" data-hint="you can make an empty array to hold your result and add to it as you iterate over the argument array">
+			<button>hands on</button>
+		</div>
+		<h2>2. Reflexion</h2>
+		<p>Without writing/using any number, but only variables and function calls, assign the number 26 to the var26 variable.</p> 
+			<div id="scopeexo" class="gdi-handson" data-initial="var value = 20;&#10;var otherValue = 5;&#10;&#10;function weird (value) {&#10;    otherValue = 3;&#10;    value = value + otherValue;&#10;    return value&#10;}&#10;var var26;" data-check="var26===26" data-hint="feel free to rename vars in the function if they don't have a global scope to make things clearer">
+			<button>hands on</button>
+		</div>
+		<h2>3. Challenge</h2>
+		<p>Write a function smallestDiff that takes an array of numbers as an argument and returns the smallest (positive) difference between any two elements of the array. For instance in the array [1, 2, 3.5, 1.2, 7] the smallest difference is 0.2 (between 1 and 1.2).</p> 
+		<div id="superminlistexo" class="gdi-handson" data-initial="function smallestDiff (numArray) {&#10;&#10;}" data-check="smallestDiff([4, 12, 3.99, 2, 1.8, 1.91])===4-3.99" data-hint="this one is all sorts of hard. You can use a double loop or leverage the sort() function of an array.">
+			<button>hands on</button>
+		</div>
+
+		<script src="lib/codemirror/codemirror.min.js"></script>
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/handson/handson.js"></script>
+	</body>
+</html>

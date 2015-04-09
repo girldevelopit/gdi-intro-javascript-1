@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
 		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="lib/codemirror/codemirror.css">
+		<link rel="stylesheet" href="lib/handson/handson.css">
 
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
@@ -48,7 +50,7 @@
                 <h3>Review</h3>
                 <p>In this code, spot the comments, variables, operator, function, argument, and return value.</p>
                 <pre><code>
-function calculateTip(total) {
+function calculateTip (total) {
     var tipPercent = 0.15; //Can be changed
     return (total * tipPercent);
 }
@@ -91,6 +93,13 @@ whatIsAwesome();
 console.log (awesomeGroup + ' is pretty awesome.'); //Won't work
 				</code></pre>
             </section>
+			<section>
+				<h3>Let's Develop It</h3>
+                <p>Identify and fix the scope error in the following code, that builds greeting strings based on a first and last name. Bonus: you can do this only by writing "var" at the right place.</p> 
+				<div id="scopeexo" class="gdi-handson" data-initial="function greet (first, last) {&#10;    name = first + ' ' + last;&#10;    greeting = 'Hello, ' + name;&#10;    return greeting;&#10;}&#10;var name = 'Marie';&#10;var lastName = 'Curie';&#10;var fullGreeting = greet(name, lastName);&#10;//alert(name)" data-check="greet('a','b')==='Hello, a b'&&fullGreeting==='Hello, Marie Curie'&&name==='Marie'" data-hint="the variable assignments in the function are global and would override existing global variables">
+					<button>hands on</button>
+				</div>
+			</section>
 
             <section>
                 <h3>Boolean Variables</h3>
@@ -176,12 +185,8 @@ if (bananas &gt; 0) {
             <section>
                 <h3>Watch out!</h3>
                 <p>Don't mix up = and ==</p>
+                <p>Use === instead of == whenever possible (hopefully always)</p>
             </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p> 
-			</section>
-
             <section>
                 <h3>The if/else statement</h3>
                 <p>Use else to provide an alternate set of instructions.</p>
@@ -195,6 +200,13 @@ if (age &gt;= 16) {
 }
 				</code></pre>
             </section>
+			<section>
+				<h3>Let's Develop It</h3>
+                <p>Write a function shouldTakeCoat that takes the temperature (a number) as an argument and returns whether to put on a coat (if it is below 50 degrees).</p> 
+				<div id="simpleifexo" class="gdi-handson" data-initial="function shouldTakeCoat (temperature) {&#10;    // your code here&#10;}" data-check="shouldTakeCoat(49)&&!shouldTakeCoat(50)" data-hint="if below 50 then return true else return false">
+					<button>hands on</button>
+				</div>
+			</section>
             <section>
                 <h3>The if/else if/else statement</h3>
                 <p>If you have multiple conditions, you can use else if.</p>
@@ -214,13 +226,16 @@ if (age &gt;= 35) {
             </section>
              <section>
 				<h3>Let's Develop It</h3>
-                <p>Modify your "wear a coat" code for these conditions:</p>
+                <p>Write a clothingAdvisor function that returns strings:</p>
                 <ol>
-                    <li>If it is less than 50 degrees, wear a coat.</li>
-                    <li>If it is less than 30 degrees, wear a coat and a hat.</li>
-                    <li>If it is less than 0 degrees, stay inside.</li>
-                    <li>Otherwise, wear whatever you want.</li>
+                    <li>If it is less than 50 degrees, 'wear a coat'</li>
+                    <li>If it is less than 30 degrees, 'wear a coat and a hat'</li>
+                    <li>If it is less than 0 degrees, 'stay inside'</li>
+                    <li>Otherwise, 'wear whatever you want'</li>
                 </ol>
+				<div id="ifelseifelsefexo" class="gdi-handson" data-initial="var coat = 'wear a coat';&#10;var coatAndHat = 'wear a coat and a hat';&#10;var inside = 'stay inside';&#10;var whatever = 'wear whatever you want';&#10;&#10;function clothingAdvisor (temperature) {&#10;    // your code here&#10;}" data-check="clothingAdvisor(50)===whatever&&clothingAdvisor(49)===coat&&clothingAdvisor(29)===coatAndHat&&clothingAdvisor(-2)===inside" data-hint="looks like you'll need the else if statement twice">
+					<button>hands on</button>
+				</div>
 			</section>
             <section>
 				<h3>Logical Operators</h3>
@@ -265,12 +280,15 @@ if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Add a logical operator to your what to wear program.</p> 
+                <p>Write a function rightString that takes a string as an argument and returns 'invalid' if the string is less than 10 characters or more than 100, otherwise returns the string itself.</p> 
+				<div id="logicalexo" class="gdi-handson" data-initial="function stringLength (str) {&#10;    return str.length;&#10;}&#10;&#10;function rightString (str) {&#10;    // your code here&#10;}" data-check="rightString('abc')==='invalid'&&rightString('abcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijklabcdefghijkl')==='invalid'&&rightString('1234567890123')==='1234567890123'" data-hint="you want to return invalid if the string is too long OR too short">
+					<button>hands on</button>
+				</div>
 			</section>
 
             <section>
                 <h3>While loops</h3>
-                <p>While will repeat the same code over and over until some condition is met.</p>
+                <p>While will repeat the same code over and over until its condition is met.</p>
                 <pre><code>
 var bottlesOfBeer = 99;
 while (bottlesOfBeer &gt;= 1) {
@@ -328,8 +346,10 @@ for (var i = 100; i &lt;= 200; i++) {
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
-                <p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
+                <p>Write a function sumOfMultiplesOf9 that returns the sum of numbers in the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
+				<div id="forloopifexo" class="gdi-handson" data-initial="function sumOfMultiplesOf9 () {&#10;    // your code here&#10;}" data-check="sumOfMultiplesOf9()===702" data-hint="use a variable you keep adding to when you reach a multiple of 9 and make sure 108 is in your loop">
+					<button>hands on</button>
+				</div>
 			</section>
 
             <section>
@@ -383,7 +403,10 @@ myFavoriteThings.push('Dancing');
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create an array of your favorite foods. Echo a few values onto your screen.</p> 
+                <p>Create a function endArray that takes an array as an argument and makes sure the last element of the array is the string 'end', otherwise adds it. The function then returns the array.</p> 
+				<div id="basicarrayexo" class="gdi-handson" data-initial="function endArray (myArray) {&#10;    // your code here&#10;}" data-check="endArray([1,2,3]).toString()===[1,2,3,'end'].toString()&&endArray([1,2,'end']).toString()===[1,2,'end'].toString()" data-hint="use the length of the array to access the last element and use push to add an element">
+					<button>hands on</button>
+				</div>
 			</section>
 
             <section>
@@ -398,7 +421,10 @@ for (var i = 0; i &lt; rainbowColors.length; i++) {
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Use a loop to make a list of all your favorite foods.</p> 
+                <p>Make a function doubleArray that takes an array of numbers and returns an array of those numbers doubled.</p> 
+				<div id="looparrayexo" class="gdi-handson" data-initial="function doubleArray (myArray) {&#10;    // your code here&#10;}" data-check="doubleArray([5,4,3,2,1]).toString() === [10,8,6,4,2].toString()" data-hint="you can build a new empty array [] and push to it as you go">
+					<button>hands on</button>
+				</div>
 			</section>            
 
 			<section>
@@ -419,6 +445,9 @@ for (var i = 0; i &lt; rainbowColors.length; i++) {
     </div><!-- Close .reveal -->
 
 
+		<script src="lib/codemirror/codemirror.min.js"></script>
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/handson/handson.js"></script>
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.min.js"></script>
 

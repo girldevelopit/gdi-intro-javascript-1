@@ -1,0 +1,24 @@
+.CodeMirror.cm-s-default {
+	font-size: 20px!important;
+	line-height: 22px!important;
+	height: 500px!important;
+}
+.gdi-handson button {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: white;
+	font-weight: bold;
+}
+.gdi-handson-wrapper {
+	height: 300px;
+	overflow: scroll;
+}
+::-webkit-scrollbar {
+    /*-webkit-appearance: none;*/
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
