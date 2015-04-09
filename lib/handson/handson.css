@@ -11,11 +11,11 @@
 }
 .gdi-handson-wrapper {
 	height: 300px;
-	overflow: auto;
+	overflow: scroll;
 }
 ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
+    /*-webkit-appearance: none;*/
+    width: 12px;
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
