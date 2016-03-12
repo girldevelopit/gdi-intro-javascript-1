@@ -33,7 +33,7 @@ Introduces events, listening functions, user inputs, and basic animations.
 ## Teaching Suggestions
 
 The main goal of this class is not just to teach students JavaScript, but also to prepare them for real-world web development.
-A very valueable tool to learn is how to debug websites using Chrome's Dev Tools, Firebug or Inspector.
+A very valuable tool to learn is how to debug websites using Chrome's Dev Tools, Firebug or Inspector.
 
 Because these slides are all built using RevealJS, and all the code samples run, it is very easy to do live demos as you are giving the presentation. I would suggest having the console open so that you can run live examples while going through the slides. It's pretty motivating to see that you can manipulate a real website with the materials learned in the class!
 
