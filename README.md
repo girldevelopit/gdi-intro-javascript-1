@@ -51,3 +51,12 @@ You can change transition by changing the reveal transition property in Reveal.i
   				transition:  'default', // default/cube/page/concave/zoom/linear/none
   			});
 ```
+
+## Instructions for running and developing locally
+
+### To run the app locally, follow these steps:
+* `git clone` the directory locally
+* `cd` into the "gdi-featured-js-intro" folder
+* if you have Python installed, you can use [Python Simple Server](https://docs.python.org/2/library/simplehttpserver.html), by typing the command `python -m SimpleHTTPServer 8000` in the command line and then navigating to "http://localhost:8000/" in the browser
+* alternatively, you can download use the npm package [serve](https://www.npmjs.com/package/serve), to use Node to create a simple http server, by typing `serve` into the command line and navigating to "http://localhost:3000/" in the browser
+
